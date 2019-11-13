@@ -15,145 +15,59 @@ class TestTaskWithStar {
     // Однозначное
     @Test
     fun testOneDigit1() {
-        assertEquals("Wrong value with arg: 1", "один", intAsString(1))
+        assertEquals("Wrong value with arg: one digit", "один", intAsString(1))
     }
 
-    @Test
-    fun testOneDigit2() {
-        assertEquals("Wrong value with arg: 2", "два", intAsString(2))
-    }
 
-    @Test
-    fun testOneDigit3() {
-        assertEquals("Wrong value with arg: 3", "три", intAsString(3))
-    }
-
-    @Test
-    fun testOneDigit4() {
-        assertEquals("Wrong value with arg: 4", "четыре", intAsString(4))
-    }
-
-    @Test
-    fun testOneDigit5() {
-        assertEquals("Wrong value with arg: 5", "пять", intAsString(5))
-    }
-
-    @Test
-    fun testOneDigit6() {
-        assertEquals("Wrong value with arg: 6", "шесть", intAsString(6))
-    }
-
-    @Test
-    fun testOneDigit7() {
-        assertEquals("Wrong value with arg: 7", "семь", intAsString(7))
-    }
-
-    @Test
-    fun testOneDigit8() {
-        assertEquals("Wrong value with arg: 8", "восемь", intAsString(8))
-    }
-
-    @Test
-    fun testOneDigit9() {
-        assertEquals("Wrong value with arg: 9", "девять", intAsString(9))
-    }
-
-    // Двузначное - teens
+    // Двузначное
     @Test
     fun testTwoDigitTeen10() {
-        assertEquals("Wrong value with arg: 10", "десять", intAsString(10))
+        assertEquals("Wrong value with arg: two digits 10", "десять", intAsString(10))
     }
 
     @Test
     fun testTwoDigitTeen11() {
-        assertEquals("Wrong value with arg: 11", "одиннадцать", intAsString(11))
+        assertEquals("Wrong value with arg: two digits 11", "одиннадцать", intAsString(11))
     }
 
     @Test
-    fun testTwoDigitTeen12() {
-        assertEquals("Wrong value with arg: 12", "двенадцать", intAsString(12))
+    fun testTwoDigitZeroAtEnd() {
+        assertEquals("Wrong value with arg: two digits zero at end", "двадцать", intAsString(20))
     }
 
     @Test
-    fun testTwoDigitTeen13() {
-        assertEquals("Wrong value with arg: 13", "тринадцать", intAsString(13))
-    }
-
-    @Test
-    fun testTwoDigitTeen14() {
-        assertEquals("Wrong value with arg: 14", "четырнадцать", intAsString(14))
-    }
-
-    @Test
-    fun testTwoDigitTeen15() {
-        assertEquals("Wrong value with arg: 15", "пятнадцать", intAsString(15))
-    }
-
-    @Test
-    fun testTwoDigitTeen16() {
-        assertEquals("Wrong value with arg: 16", "шестнадцать", intAsString(16))
-    }
-
-    @Test
-    fun testTwoDigitTeen17() {
-        assertEquals("Wrong value with arg: 17", "семнадцать", intAsString(17))
-    }
-
-    @Test
-    fun testTwoDigitTeen18() {
-        assertEquals("Wrong value with arg: 18", "восемнадцать", intAsString(18))
-    }
-
-    @Test
-    fun testTwoDigitTeen19() {
-        assertEquals("Wrong value with arg: 19", "девятнадцать", intAsString(19))
-    }
-
-    // // Двузначное - ty
-
-    @Test
-    fun testTwoDigitTy20() {
-        assertEquals("Wrong value with arg: 20", "двадцать", intAsString(20))
-    }
-
-    @Test
-    fun testTwoDigitTeen30() {
-        assertEquals("Wrong value with arg: 30", "тридцать", intAsString(30))
-    }
-
-    @Test
-    fun testTwoDigitTeen40() {
-        assertEquals("Wrong value with arg: 40", "сорок", intAsString(40))
-    }
-
-    @Test
-    fun testTwoDigitTeen50() {
-        assertEquals("Wrong value with arg: 50", "пятьдесят", intAsString(50))
-    }
-
-    @Test
-    fun testTwoDigitTeen60() {
-        assertEquals("Wrong value with arg: 60", "шестьдесят", intAsString(60))
-    }
-
-    @Test
-    fun testTwoDigitTeen70() {
-        assertEquals("Wrong value with arg: 70", "семьдесят", intAsString(70))
-    }
-
-    @Test
-    fun testTwoDigitTeen80() {
-        assertEquals("Wrong value with arg: 80", "восемьдесят", intAsString(80))
-    }
-
-    @Test
-    fun testTwoDigitTeen90() {
-        assertEquals("Wrong value with arg: 90", "девяносто", intAsString(90))
+    fun testTwoDigit99() {
+        assertEquals("Wrong value with arg: two digits 99", "девяносто девять", intAsString(99))
     }
 
     // Трёхзначное
     @Test
-    fun testThreeDigitTeen() {
-        assertEquals("Wrong value with arg: three digit", "одиннадцать", intAsString(11))
+    fun testThreeDigit100() {
+        assertEquals("Wrong value with arg: three digit 111", "сто", intAsString(100))
+    }
+
+    @Test
+    fun testThreeDigitZeroAtAnd() {
+        assertEquals("Wrong value with arg: three digit zero at end", "двести двадцать", intAsString(220))
+    }
+
+    @Test
+    fun testThreeDigitZeroInMiddle() {
+        assertEquals("Wrong value with arg: three digit zero in middle", "четыреста четыре", intAsString(404))
+    }
+
+    @Test
+    fun testThreeDigit999() {
+        assertEquals("Wrong value with arg: three digit 999", "девятьсот девяносто девять", intAsString(999))
+    }
+
+    @Test
+    fun testGreaterThan1000() {
+        assertEquals("Wrong value with arg: greater than 1000", "Неизвестное число", intAsString(1001))
+    }
+
+    @Test
+    fun testNegative() {
+        assertEquals("Wrong value with arg: negative", "Неизвестное число", intAsString(-1))
     }
 }

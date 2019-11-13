@@ -6,7 +6,7 @@ fun main() {
         println(intAsString(inputString?.toInt()))
     }
     catch (e: NumberFormatException) {
-        println("Введеёная строка не является числом.")
+        println("Введёная строка не является числом.")
     }
 }
 
